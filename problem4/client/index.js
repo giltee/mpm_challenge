@@ -9,7 +9,7 @@ $(document).ready(() => {
 $(document).on('click', '#createProduct', (e) => {
     console.log($('#name').val());
     $.ajax({
-        url: "http://localhost/myPassionMedia/problem4/createProduct.php",
+        url: "http://localhost/mpm_challenge/problem4/createProduct.php",
         type: "POST",
         contentType: 'application/x-www-form-urlencoded',
         dataType: 'json',
@@ -59,7 +59,7 @@ $(document).on('click', '.btn-success', (e) => {
 $(document).on('click', '#editProduct', (e) => {
     console.log($('#name').val());
     $.ajax({
-        url: "http://localhost/myPassionMedia/problem4/updateProduct.php",
+        url: "http://localhost/mpm_challenge/problem4/updateProduct.php",
         type: "POST",
         contentType: 'application/x-www-form-urlencoded',
         dataType: 'json',
@@ -91,7 +91,9 @@ $(document).on('click', '#editProduct', (e) => {
 
         },
         error: (res) => {
+            console.log(res);
             alert("There was an error please try again");
+            console.log(res);
         }
     });
 });
@@ -105,7 +107,7 @@ $(document).on('click', '#cancel', () => {
 // get the existing products to append to the table
 function getProducts() {
     $.ajax({
-        url: "http://localhost/myPassionMedia/problem4/getProducts.php",
+        url: "http://localhost/mpm_challenge/problem4/getProducts.php",
         type: "GET",
         dataType: 'json',
         success: function (res) {
@@ -127,6 +129,7 @@ function getProducts() {
 
         },
         error: (res) => {
+            console.log(res);
             alert("There was an error please try again");
         }
     });

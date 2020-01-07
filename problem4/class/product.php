@@ -27,7 +27,7 @@ class Product
     public function getProducts()
     {
         // get existing products and convert from json to an array
-        $file = file_get_contents($_SERVER['DOCUMENT_ROOT'] . "/myPassionMedia/problem4/db/db.json") or die();
+        $file = file_get_contents($_SERVER['DOCUMENT_ROOT'] . "/mpm_challenge/problem4/db/db.json") or die();
         return json_decode($file);
 
     }
@@ -38,7 +38,7 @@ class Product
         $products = $this->getProducts();
         // push the new product to the array
         array_push($products, $this);
-        $file = fopen($_SERVER['DOCUMENT_ROOT'] . "/myPassionMedia/problem4/db/db.json", "w+") or die("not opened");
+        $file = fopen($_SERVER['DOCUMENT_ROOT'] . "/mpm_challenge/problem4/db/db.json", "w+") or die("not opened");
         fwrite($file, json_encode($products));
         fclose($file);
     }
@@ -53,7 +53,7 @@ class Product
             }
         }
         // open db
-        $file = fopen($_SERVER['DOCUMENT_ROOT'] . "/myPassionMedia/problem4/db/db.json", "w+") or die("not opened");
+        $file = fopen($_SERVER['DOCUMENT_ROOT'] . "/mpm_challenge/problem4/db/db.json", "w+") or die("not opened");
         fwrite($file, json_encode($products));
         fclose($file);
         return $products;

@@ -59,20 +59,5 @@ class Product
         return $products;
 
     }
-    // delete product
-    public function deleteProduct()
-    {
-        $products = $this->getProducts();
-        $tempProducts = [];
-        for ($i = 0; $i < COUNT($products); $i++) {
-            if ($products[$i]->id != $this->getId()) {
-                $products[$i] = $this;
-            }
-        }
-        //opendb
-        $file = fopen($_SERVER['DOCUMENT_ROOT'] . "/myPassionMedia/problem4/db/db.json", "w+") or die("not opened");
-        fwrite($file, json_encode($products));
-        fclose($file);
-    }
 
 }

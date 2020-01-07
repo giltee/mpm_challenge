@@ -51,8 +51,8 @@ $(document).on('click', '.btn-success', (e) => {
     $("#eName").val(e.target.parentElement.parentElement.children[1].innerHTML);
     $("#eWeight").val(e.target.parentElement.parentElement.children[2].innerHTML);
     $("#eBase").val(e.target.parentElement.parentElement.children[3].innerHTML);
-    $("#eWidth").val(e.target.parentElement.parentElement.children[4].innerHTML);
-    $("#eHeight").val(e.target.parentElement.parentElement.children[5].innerHTML);
+    $("#eWidth").val(e.target.parentElement.parentElement.children[5].innerHTML);
+    $("#eHeight").val(e.target.parentElement.parentElement.children[4].innerHTML);
 })
 
 // update Product call
@@ -85,13 +85,13 @@ $(document).on('click', '#editProduct', (e) => {
             }
             const body = $(`<tbody id="products"></tbody>`).append(rows);
             $("#products").replaceWith(body);
-            alert("Product Updated");
+            // alert("Product Updated");
             $("#edit").toggle();
             $("#create").toggle();
 
         },
         error: (res) => {
-            alert("There was an erro please try again");
+            alert("There was an error please try again");
         }
     });
 });
@@ -127,7 +127,7 @@ function getProducts() {
 
         },
         error: (res) => {
-            console.log(res);
+            alert("There was an error please try again");
         }
     });
 }
